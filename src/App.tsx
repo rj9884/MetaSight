@@ -31,44 +31,42 @@ function App() {
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-blue-200">
       {/* Header & Search */}
-      <header className="bg-white border-b border-slate-200 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-            <div className="flex items-center gap-3">
-              <div className="bg-blue-600 p-2 rounded-xl shadow-sm">
-                <Search className="w-6 h-6 text-white" />
-              </div>
-              <h1 className="text-2xl font-bold tracking-tight text-slate-900">SEO Inspector</h1>
+      <div className="sticky top-4 z-50 px-4 flex justify-center w-full pointer-events-none">
+        <header className="pointer-events-auto bg-white/90 backdrop-blur-md border border-slate-200/80 shadow-lg shadow-slate-200/50 rounded-full px-3 py-2.5 w-full max-w-4xl flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-6 transition-all">
+          <div className="flex items-center gap-3 pl-2 sm:pl-3 shrink-0">
+            <div className="bg-gradient-to-br from-blue-600 to-indigo-600 p-2 rounded-xl shadow-md shadow-blue-500/20">
+              <Search className="w-4 h-4 text-white" />
             </div>
-
-            <form onSubmit={handleAnalyze} className="w-full md:max-w-xl">
-              <div className="relative group flex items-center">
-                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                  <Search className="h-5 w-5 text-slate-400 group-focus-within:text-blue-500 transition-colors" />
-                </div>
-                <input
-                  type="url"
-                  required
-                  placeholder="https://example.com"
-                  className="block w-full pl-11 pr-24 py-3 border border-slate-300 rounded-full leading-5 bg-slate-50 placeholder-slate-400 focus:outline-none focus:bg-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm transition-all duration-200 shadow-sm"
-                  value={url}
-                  onChange={(e) => setUrl(e.target.value)}
-                  disabled={loading}
-                />
-                <div className="absolute inset-y-1 right-1 flex items-center">
-                  <button
-                    type="submit"
-                    disabled={loading}
-                    className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-70 disabled:cursor-not-allowed shadow-sm"
-                  >
-                    {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : 'Analyze'}
-                  </button>
-                </div>
-              </div>
-            </form>
+            <h1 className="text-lg font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-700 hidden sm:block">MetaSight</h1>
           </div>
-        </div>
-      </header>
+
+          <form onSubmit={handleAnalyze} className="w-full sm:flex-1 max-w-2xl shrink">
+            <div className="relative group flex items-center w-full">
+              <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none">
+                <Search className="h-4 w-4 text-slate-400 group-focus-within:text-blue-600 transition-colors" />
+              </div>
+              <input
+                type="url"
+                required
+                placeholder="Paste URL to analyze..."
+                className="block w-full pl-10 pr-24 py-2 border border-slate-200 rounded-full leading-5 bg-slate-50 hover:bg-slate-100/50 placeholder-slate-400 focus:outline-none focus:bg-white focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 text-sm transition-all duration-300 shadow-inner"
+                value={url}
+                onChange={(e) => setUrl(e.target.value)}
+                disabled={loading}
+              />
+              <div className="absolute inset-y-1 right-1 flex items-center">
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="flex items-center gap-1.5 bg-slate-900 hover:bg-slate-800 text-white px-5 py-1.5 rounded-full text-xs font-medium transition-all duration-300 shadow-sm disabled:opacity-70 disabled:cursor-not-allowed active:scale-95"
+                >
+                  {loading ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : 'Analyze'}
+                </button>
+              </div>
+            </div>
+          </form>
+        </header>
+      </div>
 
       {/* Main Content Areas */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
