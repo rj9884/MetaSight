@@ -1,6 +1,6 @@
 # MetaSight
 
-A premium, fast, and visually stunning SEO tag inspector built natively in React.
+A high-performance SEO tag inspector and website analyzer built in React.
 
 <p align="center">
   <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
@@ -22,26 +22,24 @@ A premium, fast, and visually stunning SEO tag inspector built natively in React
 
 ## Overview
 
-MetaSight allows you to analyze any public URL and visually inspect its core SEO metrics instantly. Instead of squinting at source code, MetaSight extracts, categorizes, and beautifully presents metadata, social cards, heading hierarchies, images, and links.
+MetaSight provides comprehensive, real-time metadata analysis for any public URL. It functions by bypassing CORS restrictions using a reliable proxy, extracting raw DOM structures, and parsing critical SEO information without requiring backend infrastructure. It is designed for developers, SEO specialists, and technical marketers needing immediate, aggregated page data.
 
 ## Features
 
-- 🔍 **Instant Analysis**: Fetch and parse HTML from any URL securely via a CORS proxy.
-- 📱 **Social Previews**: See exactly how your links will appear on Google Search, Twitter, and Facebook/LinkedIn.
-- 📐 **Heading Hierarchy**: Visualize your `<h1>` to `<h6>` tags to ensure content flow and accessibility.
-- 🖼️ **Image Audits**: Quickly identify images missing critical `alt` text.
-- 🔗 **Link Analysis**: Break down internal vs. external links and identify `nofollow` attributes.
-- ✨ **Premium UI**: Built with a stunning, modern glassmorphic design and smooth micro-animations.
+- 🔍 **Real-time DOM Extraction**: Fetches and parses live HTML from target URLs using browser-native `DOMParser` and the `allorigins.win` proxy.
+- 📱 **Metadata Simulator**: Reconstructs and tests Open Graph, Twitter Cards, and standard Google Search Result formats.
+- 📐 **Semantic Analysis**: Deep-scans document structures, outlining `<h1>` through `<h6>` cascades for accessibility and content hierarchy validation.
+- 🖼️ **Media Auditing**: Processes all `<img>` nodes systematically to identify and surface missing or malformed `alt` attributes.
+- 🔗 **Link Classification**: Aggregates anchor tags to categorize internal vs. external routing ratios and identifies `nofollow` link assertions.
+- ⚡ **Client-Side Processing**: Zero-latency metrics calculation directly within the browser thread via React states.
 
 ## Tech Stack
 
 - **Framework**: React 18 + Vite
 - **Language**: TypeScript
-- **Styling**: Tailwind CSS v4
-- **Animations**: Framer Motion
-- **Icons**: Lucide React
-- **Data Fetching**: Native Fetch API via `api.allorigins.win` proxy
-- **HTML Parsing**: Native browser `DOMParser`
+- **CSS Engine**: Tailwind CSS v4
+- **State/Animations**: Framer Motion
+- **Data Engine**: Native Fetch API & DOMParser
 
 ## Getting Started
 
