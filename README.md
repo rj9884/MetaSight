@@ -11,6 +11,17 @@ A high-performance SEO tag inspector and website analyzer built in React.
   <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
 </p>
 
+## Screenshots
+<p align="center">
+  <img src="./public/images/meta-home.png" alt="MetaSight Home" width="800" />
+</p>
+<p align="center">
+  <img src="./public/images/meta-inspector-1.png" alt="MetaSight Inspector Dashboard" width="800" />
+</p>
+<p align="center">
+  <img src="./public/images/meta-inspector-2.png" alt="MetaSight Inspector Metrics" width="800" />
+</p>
+
 ## Table of Contents
 
 - [Overview](#overview)
